@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacked Vertical Column Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/grouped-categories.js"></script>
+</head>
+<body>
+    <div id="container" style="width: 800px; height: 600px;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    xAxis: {
+        categories: ['Category 1', 'Category 2', 'Category 3'] // Your categories here
+    },
+    series: [{
+        name: 'Set 1',
+        data: [10, 20, 30, 40], // Your data here for the first set of 4 bars
+        pointPlacement: 'between' // Align bars between categories
+    }, {
+        name: 'Set 2',
+        data: [50, 60, 70, 80], // Your data here for the second set of 4 bars
+        pointPlacement: 'between' // Align bars between categories
+    }, {
+        name: 'Set 3',
+        data: [90, 100, 110, 120], // Your data here for the third set of 4 bars
+        pointPlacement: 'between' // Align bars between categories
+    }],
+    plotOptions: {
+        column: {
+            grouping: false,
+            pointPadding: 0.1, // Adjust as needed
+            groupPadding: 0.2 // Adjust as needed
+        }
+    }
+});
+
+
+	});
+    </script>
+</body>
+</html>
